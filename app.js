@@ -8,6 +8,9 @@ import {cdDirectory} from "./src/navigation/newDirectory.js"
 import {up} from "./src/navigation/up.js"
 import {showInfo} from "./src/os/system.js"
 import {read} from "./src/fs/read.js"
+import {create} from "./src/fs/create.js"
+import {remove} from "./src/fs/delete.js"
+
 
 async function StartApp() {
     const commangs = ['.exit', 'up', 'cd', 'ls', 'cat', 'add', 'rn',
@@ -72,6 +75,12 @@ async function trySwitch(input) {
             break
         case 'cat':
             await read(input)
+            break;
+        case 'add':
+            await create(input)
+            break;
+        case 'rm':
+            await remove( input)
             break;
 
 
