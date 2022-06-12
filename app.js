@@ -10,6 +10,11 @@ import {showInfo} from "./src/os/system.js"
 import {read} from "./src/fs/read.js"
 import {create} from "./src/fs/create.js"
 import {remove} from "./src/fs/delete.js"
+import {move} from "./src/fs/move.js"
+import {copy} from "./src/fs/copy.js"
+import {calculate} from "./src/hash/calculate.js"
+
+
 
 
 async function StartApp() {
@@ -80,7 +85,16 @@ async function trySwitch(input) {
             await create(input)
             break;
         case 'rm':
-            await remove( input)
+            await remove(input)
+            break;
+        case 'mv':
+            await move(input)
+            break;
+        case 'cp':
+            await copy(input)
+            break;
+        case 'hash':
+            await calculate(input)
             break;
 
 
