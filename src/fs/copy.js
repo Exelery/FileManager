@@ -5,7 +5,7 @@ import { createReadStream, createWriteStream } from "fs";
 
 export const copy = async (input) => {
     try{
-        if(input.split(" ").length == 3) {
+        if(input.split(" ").length > 2) {
             let file = path.join(process.cwd(), input.split(" ")[1])
             let dict = path.join(input.split(" ")[2])
         await fs.access(file)

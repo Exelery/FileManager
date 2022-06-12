@@ -13,6 +13,7 @@ import {remove} from "./src/fs/delete.js"
 import {move} from "./src/fs/move.js"
 import {copy} from "./src/fs/copy.js"
 import {calculate} from "./src/hash/calculate.js"
+import{compress} from "./src/zip/compress.js"
 
 
 
@@ -95,6 +96,9 @@ async function trySwitch(input) {
             break;
         case 'hash':
             await calculate(input)
+            break;
+        case "compress":
+            await compress(input)
             break;
 
 
